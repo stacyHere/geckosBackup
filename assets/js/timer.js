@@ -3,6 +3,9 @@ const btn5 = document.getElementById('btn5');
 const btn7 = document.getElementById('btn7');
 const timer = document.querySelector('.timer');
 const startBtn = document.querySelector('.startBtn');
+const audio3 = new Audio ("working_tools/track1 _meditate - Mindful Breathing Meditation - 3min.mp3");
+const audio5 = new Audio ("working_tools/Track2  - Mindful Breathing Meditation - 5min.mp3");
+const audio7 = new Audio ("working_tools/Track 3 - Meditation for Spiritual Awakening  7 min .mp3");
 let duration;
 let diffTime;
 let timeCount;
@@ -37,6 +40,7 @@ function meditateNow() {
 
 function startInterval() {
   if(diffTime > 0) {
+    audio3.play();
     timeCount = setInterval(meditateNow, 1000);
   }
 }
