@@ -3,7 +3,7 @@ const btn5 = document.getElementById('btn5');
 const btn7 = document.getElementById('btn7');
 const timer = document.querySelector('.timer');
 const startBtn = document.querySelector('.startBtn');
-
+const box = document.getElementById("box");
 let duration;
 let diffTime;
 let timeCount;
@@ -15,6 +15,7 @@ startBtn.disabled = true;
 startBtn.style.visibility = 'hidden';
 
 function update(t) {
+  box.classList.toggle("hide");
   time = t;
   timer.innerHTML = t + ":00";  //display before starting
   btn3.disabled = true;
@@ -35,14 +36,13 @@ function meditateNow() {
   //if less than 9 sec left pad with a zero in front
   if(sec <= 9){
     timer.innerHTML = min + ":0" + sec;
-  //  sec.padStart(0);
-}else{
-  timer.innerHTML = min + ":" + sec;
-}
+  }else{
+    timer.innerHTML = min + ":" + sec;
+  }
   //when timer is done
   if(sec <= 0 && min <= 0) {
     clearInterval(timeCount);
-    timer.innerHTML = "You have completed " + time + " minutes of meditation";
+    //timer.innerHTML = "You have completed " + time + " minutes of meditation";
   }
 }
 
